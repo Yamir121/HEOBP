@@ -1,0 +1,6 @@
+﻿  Park.cpp
+c:\users\yarom\documents\visual studio 2015\projects\main - kopie\main\park.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\yarom\documents\visual studio 2015\projects\main - kopie\main\park.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\yarom\documents\visual studio 2015\projects\main - kopie\main\park.cpp(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  main.vcxproj -> C:\Users\Yarom\Documents\Visual Studio 2015\Projects\main - kopie\Debug\main.exe
+  main.vcxproj -> C:\Users\Yarom\Documents\Visual Studio 2015\Projects\main - kopie\Debug\main.pdb (Full PDB)
