@@ -7,11 +7,15 @@ using namespace std;
 
 int main()
 {
+	
 	//constructor, creating the park
 	Park jurassicPark = Park();
 	//Add the dinosaurs to the park
+	int count = jurassicPark.count;
 	jurassicPark.add(Dinosaur("Megalodon"));
 	jurassicPark.add(Dinosaur("Velociraptor"));
+	jurassicPark.add(Dinosaur("Stegosaurus"));
+	jurassicPark.add(Dinosaur("Stegosaurus"));
 	jurassicPark.add(Dinosaur("Stegosaurus"));
 	//draw the array of dinosaurs on the console
 	jurassicPark.list();
