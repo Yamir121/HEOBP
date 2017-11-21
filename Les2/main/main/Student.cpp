@@ -1,13 +1,11 @@
 #include "stdafx.h"
 #include "Student.h"
 #include <string>
-
-Student::Student()
-{
-}
+#include <vector>
 
 Student::Student(std::string name)
 {
+	//name of this instance is variable name
 	this->name = name;
 }
 
@@ -15,6 +13,11 @@ std::string Student::getName()
 {
 	//returns the name of this student
 	return name;
+}
+
+int Student::getEC() 
+{
+	return 5;
 }
 
 Student::~Student()
