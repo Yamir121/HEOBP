@@ -2,6 +2,7 @@
 #include "Student.h"
 #include <string>
 #include <vector>
+#include "Docent.h"
 
 class Module
 {
@@ -11,9 +12,9 @@ public:
 	std::string getName();
 	int EC;
 	std::vector<Student*> klassenLijst;
+	Docent* docent;
 
 private:
 	std::string name;
-
 };
 
