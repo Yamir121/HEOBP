@@ -15,6 +15,12 @@ std::string Student::getName()
 	return name;
 }
 
+int Student::getEC()
+{
+
+	return totaalEC;
+}
+
 Student::~Student()
 {
 }

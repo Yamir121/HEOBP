@@ -9,9 +9,11 @@ public:
 	~Student();
 	Student(std::string name);
 	std::string getName();
+	int getEC();
+	int totaalEC = 0;
 
 private:	
-	int totaalEC;
 	std::string name;
+
 };
 

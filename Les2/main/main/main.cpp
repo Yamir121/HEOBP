@@ -39,13 +39,19 @@ int main()
 	modules[1]->docent = new Docent("Vera Vlinderbes");
 	modules[2]->docent = new Docent("Erica Ederveer");
 
-	//print all the students *add EC total of students*
-	printStudentlijst(studentenLijst);
-	//sort all students into random modules
+	//assign all students into random modules
 	moduleToewijzen(studentenLijst, modules);
 	//print the modulelist with docent, studentlist and EC of that class
 	printModulelijst(modules);
-
+	//print a list of all students with their total EC
+	printStudentlijst(studentenLijst);
+	//modules[0]->EC = 4;
+	//printStudentlijst(studentenLijst);
+	//remove student based on index of the list
+	modules[0]->klassenLijst.erase(modules[0]->klassenLijst.begin() + 4);
+	//print the list of all modules again
+	printModulelijst(modules);
+	//to make the console stay open
 	char c;
 	std::cin >> c;
     return 0;
@@ -80,11 +86,10 @@ void printStudentlijst(std::vector<Student*> studentenLijst)
 	while (i != studentenLijst.end())
 	{
 		std::cout << (*i)->getName() << std::endl;
+		std::cout << "Totaal EC: " + std::to_string((*i)->getEC()) << std::endl;
 		std::cout << "------------------" << std::endl;
 		i++;
-
 	}
-
 }
 
 void moduleToewijzen(std::vector<Student*> studentenLijst, Module* modules[])
@@ -106,6 +111,7 @@ void moduleToewijzen(std::vector<Student*> studentenLijst, Module* modules[])
 			else {
 				//add student to this random module
 				modules[randModule]->klassenLijst.push_back(*i);
+				(*i)->totaalEC += modules[randModule]->EC;
 			}
 		}
 		i++;
