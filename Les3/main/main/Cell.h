@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "CellBehaviour.h"
+#include <iostream>
 
 class Cell
 {

@@ -28,37 +28,24 @@ void Matrix::fillMatrix()
 	}
 }
 
-void Matrix::printMatrix()
-{
-	updateMatrix();
-	//define the printable
-	std::string print;
-	for (int i = 0; i < matrixSize; i++)
-	{
-		std::vector<Cell> row = table[i];
-		
-		for (int j = 0; j < matrixSize; j++)
-		{
-			print += row[j].returnState();
-			
-		}
-		std::cout << print << std::endl;
-		print = "";
-	}
-}
-
 void Matrix::updateMatrix()
 {
+	//use the behaviour defined in the usebehaviour function
 	CellBehaviour* behaviour = useBehaviour();
-
+	std::string print;
+	//for the y size of the matrix define the rows
 	for (int i = 0; i < matrixSize; i++)
 	{
 		std::vector<Cell> row = table[i];
-
+		//for the rows check for statechanges conform the behaviour
 		for (int j = 0; j < matrixSize; j++)
 		{
 			row[j].changeState(behaviour);
+			print += row[j].returnState();
 		}
+		//print all
+		std::cout << print << std::endl;
+		print = "";
 	}
 }
 

@@ -6,6 +6,6 @@ public:
 	Ruleset_1();
 	~Ruleset_1();
 
-	double change() override;
+	int useRules(int neighbourAmount) override;
 };
 

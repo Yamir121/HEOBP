@@ -20,16 +20,14 @@ std::string Cell::returnState()
 
 void Cell::changeState(CellBehaviour* behaviour)
 {
-	behaviour->change();
-	//testing stuff
-	if 
-	//if cell is dead, revive cell
-	if (this->state == "   ")
+	int neighbourAmount = returnNeighbours();
+	int f = behaviour->useRules(neighbourAmount);
+	if ( f == 2)
 	{
+		std::cout << f << std::endl;
 		this->state = " X ";
 	}
-	//if cell is alive, kill cell
-	else if (this->state == " X ")
+	else if (f == 1)
 	{
 		this->state = "   ";
 	}

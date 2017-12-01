@@ -12,7 +12,6 @@ public:
 	Matrix();
 	~Matrix();
 	void fillMatrix();
-	void printMatrix();
 	void updateMatrix();
 	CellBehaviour* useBehaviour();
 	std::vector<std::vector<Cell>> table;

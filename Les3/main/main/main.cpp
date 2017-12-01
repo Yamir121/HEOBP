@@ -10,8 +10,13 @@ int main()
 	Matrix* world = new Matrix();
 	world->matrixSize = 10;
 	world->fillMatrix();
-	world->printMatrix();
+	world->updateMatrix();
 	
+	//get amount of neighbours per cell
+	//implement rules in ruleset 1
+	//create an function update
+	//do 2 more rulesets
+
 	char c;
 	std::cin >> c;
 	return 0;

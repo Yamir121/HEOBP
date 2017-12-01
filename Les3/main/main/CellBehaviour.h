@@ -1,5 +1,5 @@
 #pragma once
-
+#include <stdlib.h>
 
 class CellBehaviour
 {
@@ -7,6 +7,6 @@ public:
 	CellBehaviour();
 	~CellBehaviour();
 
-	virtual double change() = 0;
+	virtual int useRules(int neighbourAmount) = 0;
 };
 
