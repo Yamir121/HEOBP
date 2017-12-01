@@ -115,12 +115,16 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Ruleset_1.cpp" />
+    <ClCompile Include="Ruleset_2.cpp" />
+    <ClCompile Include="Ruleset_3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cell.h" />
     <ClInclude Include="CellBehaviour.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Ruleset_1.h" />
+    <ClInclude Include="Ruleset_2.h" />
+    <ClInclude Include="Ruleset_3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,8 +2,9 @@
 #include <vector>
 #include "Cell.h"
 #include <iostream>
-#include "Cellbehaviour.h"
 #include "Ruleset_1.h"
+#include "Ruleset_2.h"
+#include "Ruleset_3.h"
 
 
 class Matrix
@@ -13,7 +14,7 @@ public:
 	~Matrix();
 	void fillMatrix();
 	void updateMatrix();
-	CellBehaviour* useBehaviour();
+	CellBehaviour* useBehaviour(CellBehaviour* ruleset);
 	std::vector<std::vector<Cell>> table;
 	int matrixSize;
 };

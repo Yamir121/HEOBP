@@ -15,7 +15,6 @@ void Matrix::fillMatrix()
 	for (int i = 0; i < matrixSize; i++)
 	{
 		std::vector<Cell> row;
-
 		for (int j = 0; j < matrixSize; j++)
 		{
 			//add cells to the row
@@ -23,25 +22,22 @@ void Matrix::fillMatrix()
 		}
 		//add the rows to the table
 		table.push_back(row);
-
-
 	}
 }
 
 void Matrix::updateMatrix()
 {
 	//use the behaviour defined in the usebehaviour function
-	CellBehaviour* behaviour = useBehaviour();
+	CellBehaviour* behaviour = useBehaviour(ruleset);
 	std::string print;
 	//for the y size of the matrix define the rows
-	for (int i = 0; i < matrixSize; i++)
+	for (int y = 0; y < matrixSize; y++)
 	{
-		std::vector<Cell> row = table[i];
 		//for the rows check for statechanges conform the behaviour
-		for (int j = 0; j < matrixSize; j++)
+		for (int x = 0; x < matrixSize; x++)
 		{
-			row[j].changeState(behaviour);
-			print += row[j].returnState();
+			table[y][x].changeState(behaviour, table);
+			print += table[y][x].returnState();
 		}
 		//print all
 		std::cout << print << std::endl;
@@ -49,6 +45,9 @@ void Matrix::updateMatrix()
 	}
 }
 
-CellBehaviour* Matrix::useBehaviour() {
-	return new Ruleset_1();
+CellBehaviour* Matrix::useBehaviour(CellBehaviour* ruleset) {
+	CellBehaviour* ruleset1 = new Ruleset_1();
+	CellBehaviour* ruleset2 = new Ruleset_2();
+
+	return ruleset;
 }

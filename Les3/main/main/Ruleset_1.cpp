@@ -13,15 +13,17 @@ Ruleset_1::~Ruleset_1()
 
 int Ruleset_1::useRules(int neighbourAmount)
 {
-	if (neighbourAmount == 0)
+	if (neighbourAmount < 2)
 	{
-		int v1 = rand() % 2;
-		return v1;
+		return 1;
 	}
-	else if (neighbourAmount == 1)
+	if (neighbourAmount > 3)
 	{
-		int v1 = rand() % 1;
-		return v1;
+		return 1;
+	}
+	if (neighbourAmount == 3 || neighbourAmount == 2)
+	{
+		return 2;	
 	}
 	return -1;
 }
