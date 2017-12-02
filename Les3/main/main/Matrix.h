@@ -13,6 +13,7 @@ public:
 	Matrix();
 	~Matrix();
 	void fillMatrix();
+	bool calcMatrix();
 	void updateMatrix(int ruleset);
 	CellBehaviour* useBehaviour(int rulesetN);
 	std::vector<std::vector<Cell>> table;

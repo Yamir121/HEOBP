@@ -4,20 +4,6 @@ Cell::Cell(int y, int x)
 {
 	y_index = y;
 	x_index = x;
-	//bad code, change this
-	std::string beginState;
-	int random = rand() % 2;
-	if (random == 1)
-	{
-		beginState = " . ";
-	}
-	else
-	{
-		beginState = " X ";
-	}
-	//end bad code
-
-	//this->state = beginState;
 }
 
 Cell::~Cell()
@@ -29,9 +15,8 @@ std::string Cell::returnState()
 	return this->state;
 }
 
-void Cell::changeState(CellBehaviour* behaviour, std::vector<std::vector<Cell>> table)
+void Cell::changeState(CellBehaviour* behaviour)
 {
-	int neighbourAmount = returnNeighbours(table);
 	//2 means revive, 1 means kill
 	int change = behaviour->useRules(neighbourAmount);
 	if (change == 2)
@@ -47,6 +32,7 @@ void Cell::changeState(CellBehaviour* behaviour, std::vector<std::vector<Cell>> 
 		//failsave to check if the rules are workings
 		this->state = " F ";
 	}
+	this->neighbourAmount = -1;
 }
 
 int Cell::returnNeighbours(std::vector<std::vector<Cell>> table)
@@ -75,5 +61,6 @@ int Cell::returnNeighbours(std::vector<std::vector<Cell>> table)
 			}
 		}
 	}
+	//std::cout << returnValue << std::endl;
 	return returnValue;
 }

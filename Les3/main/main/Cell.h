@@ -10,15 +10,16 @@ public:
 	Cell(int y, int x);
 	~Cell();
 	std::string returnState();
-	void changeState(CellBehaviour* behaviour, std::vector<std::vector<Cell>> table);
+	void changeState(CellBehaviour* behaviour);
 	int returnNeighbours(std::vector<std::vector<Cell>>);
 
 public:
 	int y_index;
 	int x_index;
-	std::string state;
+	std::string state = "   ";
+	int neighbourAmount = -1;
 
 private:
-	const std::string alive = "   ";
-	const std::string dead = " X ";
+	const std::string alive = " X ";
+	const std::string dead = "   ";
 };

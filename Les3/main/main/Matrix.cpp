@@ -25,6 +25,44 @@ void Matrix::fillMatrix()
 	}
 }
 
+bool Matrix::calcMatrix()
+{
+	for (int y = 0; y < matrixSize; y++)
+	{
+		//for all cells in the rows check for amount of neighbours
+		for (int x = 0; x < matrixSize; x++)
+		{
+			//total amount of neighbours of this cell
+			int returnValue = 0;
+			//an array of all the combinations of coordinate differences
+			int allValues[16] = { 1,1,0,1,1,0,-1,-1,-1,0,0,-1,-1,1,1,-1 };
+			//for all these values check if they are within range of the vector
+			for (int i = 0; i < 16; i += 2)
+			{
+				bool outOfRange = false;
+				int yValue = y + allValues[i];
+				int xValue = x + allValues[i + 1];
+				//hardcoded, fix this
+				if (yValue > 9 || yValue < 0 || xValue > 9 || xValue < 0)
+				{
+					outOfRange = true;
+				}
+				if (outOfRange == false)
+				{
+					//add 1 to the neighbour count if the state is alive
+					if (table[yValue][xValue].state == " X ")
+					{
+						returnValue += 1;
+					}
+				}
+			}
+			//std::cout << returnValue << std::endl;
+			table[y][x].neighbourAmount = returnValue;
+		}
+	}
+	return true;
+}
+
 void Matrix::updateMatrix(int ruleset)
 {
 	//use the behaviour defined in the usebehaviour function
@@ -36,7 +74,7 @@ void Matrix::updateMatrix(int ruleset)
 		//for the rows check for statechanges conform the behaviour
 		for (int x = 0; x < matrixSize; x++)
 		{
-			table[y][x].changeState(behaviour, table);
+			table[y][x].changeState(behaviour);
 			print += table[y][x].returnState();
 		}
 		//print all

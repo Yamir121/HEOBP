@@ -13,13 +13,18 @@ int main(int argc, char* argv[])
 	Matrix* world = new Matrix();
 	world->matrixSize = 10;
 	world->fillMatrix();
+	world->table[1][1].state = " X ";
+	world->table[2][2].state = " X ";
+	world->table[2][1].state = " X ";
+	world->table[1][2].state = " X ";
 
 	//update frame every second
 	for (int i = 0; i < 400; i++)
 	{
-		world->updateMatrix(1);
-		//testing, amount of neighbours of cell 0,0
-		std::cout << world->table[0][0].returnNeighbours(world->table) << std::endl;
+		if (world->calcMatrix())
+		{
+			world->updateMatrix(1);
+		}
 		sleep_for(nanoseconds(10));
 		sleep_until(system_clock::now() + seconds(1));
 		system("cls");	
