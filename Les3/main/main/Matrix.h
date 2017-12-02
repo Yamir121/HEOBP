@@ -13,8 +13,8 @@ public:
 	Matrix();
 	~Matrix();
 	void fillMatrix();
-	void updateMatrix();
-	CellBehaviour* useBehaviour(CellBehaviour* ruleset);
+	void updateMatrix(int ruleset);
+	CellBehaviour* useBehaviour(int rulesetN);
 	std::vector<std::vector<Cell>> table;
 	int matrixSize;
 };

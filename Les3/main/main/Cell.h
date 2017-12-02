@@ -17,4 +17,8 @@ public:
 	int y_index;
 	int x_index;
 	std::string state;
+
+private:
+	const std::string alive = "   ";
+	const std::string dead = " X ";
 };

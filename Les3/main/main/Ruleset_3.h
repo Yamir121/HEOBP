@@ -5,5 +5,7 @@ class Ruleset_3 : public CellBehaviour
 public:
 	Ruleset_3();
 	~Ruleset_3();
+
+	int useRules(int neighbourAmount) override;
 };
 

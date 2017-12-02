@@ -25,7 +25,7 @@ void Matrix::fillMatrix()
 	}
 }
 
-void Matrix::updateMatrix()
+void Matrix::updateMatrix(int ruleset)
 {
 	//use the behaviour defined in the usebehaviour function
 	CellBehaviour* behaviour = useBehaviour(ruleset);
@@ -45,9 +45,22 @@ void Matrix::updateMatrix()
 	}
 }
 
-CellBehaviour* Matrix::useBehaviour(CellBehaviour* ruleset) {
-	CellBehaviour* ruleset1 = new Ruleset_1();
-	CellBehaviour* ruleset2 = new Ruleset_2();
+CellBehaviour* Matrix::useBehaviour(int rulesetN) {
 
-	return ruleset;
+	switch (rulesetN)
+	{
+	case 1:
+		return new Ruleset_1();
+		break;
+	case 2: 
+		return new Ruleset_2();
+		break;
+	case 3:
+		return new Ruleset_3();
+		break;
+	default:
+		//default ruleset is 1
+		return new Ruleset_1();
+		break;
+	}
 }
