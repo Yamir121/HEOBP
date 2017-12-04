@@ -11,12 +11,12 @@ int main(int argc, char* argv[])
 	using namespace std::chrono;
 	//construct the matrix
 	Matrix* world = new Matrix();
-	world->matrixSize = 10;
+	world->matrixSize = 25;
 	world->fillMatrix();
-	world->table[1][1].state = " X ";
-	world->table[2][2].state = " X ";
-	world->table[2][1].state = " X ";
-	world->table[1][2].state = " X ";
+	world->table[1][3].state = " X ";
+	world->table[2][3].state = " X ";
+	world->table[3][3].state = " X ";
+	world->table[4][3].state = " X ";
 
 	//update frame every second
 	for (int i = 0; i < 400; i++)

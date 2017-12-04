@@ -42,8 +42,8 @@ bool Matrix::calcMatrix()
 				bool outOfRange = false;
 				int yValue = y + allValues[i];
 				int xValue = x + allValues[i + 1];
-				//hardcoded, fix this
-				if (yValue > 9 || yValue < 0 || xValue > 9 || xValue < 0)
+				//Check for the range of the vectors
+				if (yValue > (matrixSize - 1) || yValue < 0 || xValue >(matrixSize - 1) || xValue < 0)
 				{
 					outOfRange = true;
 				}

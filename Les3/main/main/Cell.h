@@ -17,7 +17,7 @@ public:
 	int y_index;
 	int x_index;
 	std::string state = "   ";
-	int neighbourAmount = -1;
+	int neighbourAmount = 0;
 
 private:
 	const std::string alive = " X ";
