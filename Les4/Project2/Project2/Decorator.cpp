@@ -5,5 +5,6 @@ Decorator::Decorator(Character* c) {
 }
 
 void Decorator::render() {
+	//call render function from character in decorator
 	theCharacter->render();
 }

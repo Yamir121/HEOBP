@@ -6,6 +6,7 @@
 template <typename T>
 std::vector<T> sortArray(std::vector<T> a)
 {
+	//working with index instead of iterator because of the change in elements
 	for (int i = 0; i < a.size(); i++)
 	{
 		if ((i+1) != a.size() && a[i] > a[i+1])
