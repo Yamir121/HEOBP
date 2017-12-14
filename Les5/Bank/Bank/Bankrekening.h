@@ -8,7 +8,8 @@ public:
 	~Bankrekening();
 	Bankrekening operator+=(const Transactie& t);
 	Bankrekening operator-=(const Transactie& t);
-//private:
+	friend std::ostream& operator<<(std::ostream& os, const Bankrekening& r);
+private:
 	float saldo;
 	std::vector<Transactie> transactieHistory;
 };
