@@ -21,6 +21,7 @@ int main()
 	//create the list of characters to be rendered on the screen
 	std::vector<Character*> characters;
 	Character* orc0 = Character::createCharacter("Orc","Shaman");
+	//add to list
 	characters.push_back(orc0);
 	//construct orc with farmer decorator
 	Character* orc = Character::createCharacter("Orc", "Soldier");
